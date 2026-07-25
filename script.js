@@ -326,50 +326,9 @@ const updateNavbar = () => {
 };
 
 const initHeroScrollStory = () => {
-  if (prefersReducedMotion || typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
-
-  const hero = document.querySelector(".hero");
-  if (!hero) return;
-
-  const heroBg = hero.querySelector(".hero-bg");
-  const heroOverlay = hero.querySelector(".hero-overlay");
-  const heroCard = hero.querySelector(".hero-card");
-  const heroLines = hero.querySelector(".hero-lines");
-  const heroImage = hero.querySelector(".hero-logo img");
-  const heroText = hero.querySelectorAll(".hero-logo, .eyebrow, h1, .tagline, .hero-copy, .hero-actions");
-  const heroDetails = hero.querySelectorAll(".hero-proof div, .hero-trust-row span");
-
-  if (!heroBg || !heroOverlay || !heroCard) return;
-
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.set(heroBg, { scale: 1, yPercent: 0, filter: "brightness(0.92) saturate(1.06)" });
-  gsap.set([heroCard, heroImage, heroLines].filter(Boolean), { force3D: true });
-
-  const heroTimeline = gsap.timeline({
-    defaults: { ease: "none" },
-    scrollTrigger: {
-      trigger: hero,
-      start: "top top",
-      end: () => `+=${Math.max(window.innerHeight * 1.05, 720)}`,
-      scrub: 0.28,
-      pin: true,
-      pinSpacing: true,
-      anticipatePin: 1,
-      invalidateOnRefresh: true,
-    },
-  });
-
-  heroTimeline
-    heroTimeline
-    .to(heroBg, { yPercent: -5, filter: "brightness(0.76) saturate(1.12)" }, 0)
-    .to(heroOverlay, { opacity: 0.96 }, 0)
-    .to(heroLines, { yPercent: -8, opacity: 0.1 }, 0)
-    .to(heroImage, { scale: 1.04, y: -10 }, 0.08)
-    .to(heroCard, { y: -96, scale: 0.97, autoAlpha: 0 }, 0.62)
-    .to(heroBg, { yPercent: -8, filter: "brightness(0.58) saturate(1.08)" }, 0.72)
-    .to(heroOverlay, { opacity: 1 }, 0.76);
-
-  window.addEventListener("load", () => ScrollTrigger.refresh(), { once: true });
+  // Scroll-pinned zoom/fade effect removed. The hero now behaves like a
+  // normal section: it scrolls away naturally and the next section follows
+  // right after it, with no pinning, fading, or zooming.
 };
 
 updateNavbar();
