@@ -1,4 +1,4 @@
-﻿const navbar = document.querySelector(".navbar");
+const navbar = document.querySelector(".navbar");
 const year = document.getElementById("year");
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
@@ -326,9 +326,28 @@ const updateNavbar = () => {
 };
 
 const initHeroScrollStory = () => {
-  // Scroll-pinned zoom/fade effect removed. The hero now behaves like a
-  // normal section: it scrolls away naturally and the next section follows
-  // right after it, with no pinning, fading, or zooming.
+  if (prefersReducedMotion || typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+
+  const hero = document.querySelector(".hero");
+  if (!hero) return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Pins the hero in place for a short scroll distance, then releases it
+  // quickly so the next section glides up fast and smoothly. Nothing in
+  // the hero fades or zooms - the headline, tagline, and buttons stay
+  // fully visible the whole time.
+  ScrollTrigger.create({
+    trigger: hero,
+    start: "top top",
+    end: "+=250",
+    pin: true,
+    pinSpacing: true,
+    anticipatePin: 1,
+    invalidateOnRefresh: true,
+  });
+
+  window.addEventListener("load", () => ScrollTrigger.refresh(), { once: true });
 };
 
 updateNavbar();
