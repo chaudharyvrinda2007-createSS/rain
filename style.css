@@ -428,6 +428,7 @@ a:hover {
   gap: 10px;
   justify-content: flex-end;
   margin: 0;
+  padding-right: 150px;
 }
 
 .hero-info-strip {
