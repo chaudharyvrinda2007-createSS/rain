@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-label="Sandstone texture">
+  <defs>
+    <linearGradient id="s" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#d6a85b"/>
+      <stop offset=".45" stop-color="#f0cf8c"/>
+      <stop offset="1" stop-color="#a06c35"/>
+    </linearGradient>
+    <filter id="sand">
+      <feTurbulence type="fractalNoise" baseFrequency="0.055" numOctaves="4" seed="17"/>
+      <feColorMatrix values="0 0 0 0 .78 0 0 0 0 .55 0 0 0 0 .28 0 0 0 .42 0"/>
+      <feBlend in="SourceGraphic" mode="multiply"/>
+    </filter>
+  </defs>
+  <rect width="900" height="620" fill="url(#s)"/>
+  <path d="M-40 100C120 150 260 50 430 115s320 60 520-15" fill="none" stroke="#fff0bc" stroke-width="16" opacity=".3"/>
+  <path d="M-50 330C150 390 280 280 460 335s290 105 500 40" fill="none" stroke="#7d4d25" stroke-width="13" opacity=".28"/>
+  <path d="M-40 520C180 460 340 560 520 500s260-95 430-35" fill="none" stroke="#fff4cf" stroke-width="11" opacity=".26"/>
+  <rect width="900" height="620" fill="transparent" filter="url(#sand)" opacity=".75"/>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-label="White marble texture">
+  <defs>
+    <linearGradient id="base" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fbfbf8"/>
+      <stop offset="0.5" stop-color="#e8e4dc"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <filter id="soft">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="4" seed="8"/>
+      <feColorMatrix values="0 0 0 0 0.76 0 0 0 0 0.75 0 0 0 0 0.72 0 0 0 .38 0"/>
+      <feBlend in="SourceGraphic" mode="multiply"/>
+    </filter>
+  </defs>
+  <rect width="900" height="620" fill="url(#base)"/>
+  <path d="M-40 120C160 80 260 200 440 150S720 10 950 80" fill="none" stroke="#b8b5ad" stroke-width="18" stroke-linecap="round" opacity=".45"/>
+  <path d="M-70 430C140 360 260 520 455 465S720 295 960 360" fill="none" stroke="#c8c3b8" stroke-width="12" stroke-linecap="round" opacity=".55"/>
+  <path d="M120-30C170 130 80 220 160 390s20 250-10 300" fill="none" stroke="#9f9d98" stroke-width="7" opacity=".34"/>
+  <path d="M640-20C590 130 710 220 650 360s30 210 130 310" fill="none" stroke="#aaa69e" stroke-width="8" opacity=".28"/>
+  <rect width="900" height="620" fill="transparent" filter="url(#soft)" opacity=".72"/>
+</svg>
