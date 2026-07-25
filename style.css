@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --brand: #08664f;
   --brand-dark: #021f1a;
   --brand-deep: #020303;
@@ -26,7 +26,7 @@
 }
 
 html {
-  scroll-behavior: smooth and soft;
+  scroll-behavior: smooth;
   scroll-padding-top: 88px;
 }
 
@@ -396,8 +396,8 @@ a:hover {
 
 .hero-proof div {
   padding: 22px 18px 26px 0;
-  border-top: 1px solid rgba(255, 248, 234, 0.18);
-  border-bottom: 1px solid rgba(255, 248, 234, 0.32);
+  border-top: 1px solid rgba(255, 248, 234, 0.3);
+  border-bottom: 1px solid rgba(255, 248, 234, 0.45);
   background: transparent;
 }
 
@@ -2383,48 +2383,84 @@ body.zoom-open {
   }
 
   .hero {
-    min-height: 860px;
-    padding-top: 76px;
+    min-height: 100vh;
+    height: auto;
+    padding-top: 96px;
+    padding-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    width: 100%;
   }
 
   .hero-content .row {
     align-items: flex-start !important;
-    padding-top: 18px;
-    padding-bottom: 340px;
+    min-height: 0 !important;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .hero-card {
-    padding: 26px;
+    padding: 22px;
+  }
+
+  .hero-logo {
+    margin-bottom: 14px !important;
   }
 
   .hero-logo img {
-    width: 58px;
-    height: 58px;
+    width: 52px;
+    height: 52px;
   }
 
   .hero-logo span {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
+  }
+
+  .hero-actions {
+    margin-top: 18px;
   }
 
   .hero-actions .btn {
     width: 100%;
+    padding: 0.75rem 1.1rem;
   }
 
   .hero-proof {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 8px;
   }
 
   .hero-proof div {
-    padding: 14px 0 16px;
+    padding: 10px 0 12px;
   }
 
   .hero-info-strip {
-    padding: 14px 0 18px;
+    position: static;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    margin-top: 18px;
+    padding: 0;
+    border-top: none;
+    background: none;
+    backdrop-filter: none;
+  }
+
+  .hero-trust-row {
+    margin-top: 12px;
+    gap: 8px;
   }
 
   .hero-trust-row span {
     white-space: normal;
+    padding: 8px 12px;
+    font-size: 0.82rem;
   }
 
   .hero-scroll-cue {
